@@ -799,7 +799,6 @@ $databases['default']['default'] = array (
   'prefix' => '',
   'host' => 'localhost',
   'port' => '3306',
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
 );
-$settings['config_sync_directory'] = 'sites/default/files/config_C3l75_uNAImbLhN1U0RQ1W9sEotspXsZ-y-2lpSQIcEV2CeIQO0YQeGua0CFcMru4HhevJv7_w/sync';
+# $settings['config_sync_directory'] = 'sites/default/files/config_C3l75_uNAImbLhN1U0RQ1W9sEotspXsZ-y-2lpSQIcEV2CeIQO0YQeGua0CFcMru4HhevJv7_w/sync';
