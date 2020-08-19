@@ -793,11 +793,11 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
 $databases['default']['default'] = array (
-  'database' => 'drupal8',
-  'username' => 'drupal8',
-  'password' => 'drupal8',
+  'database' => 'hestiagc_hestiagnew',
+  'username' => 'hestiagc_hestiag',
+  'password' => 'Hestiag12345',
   'prefix' => '',
-  'host' => 'database',
+  'host' => 'localhost',
   'port' => '3306',
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
