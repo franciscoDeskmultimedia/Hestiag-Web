@@ -1,0 +1,147 @@
+{#
+/**
+ * @file
+ * Theme override for a main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A css-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   Javascript.
+ *
+ * @see template_preprocess_views_view()
+ */
+#}
+{%
+  set classes = [
+    'view',
+    'view-' ~ id|clean_class,
+    'view-id-' ~ id,
+    'view-display-id-' ~ display_id,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+    'container',
+    'all-product-grid'
+  ]
+%}
+{# <div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if title %}
+    {{ title }}
+  {% endif %}
+  {{ title_suffix }}
+  {% if header %}
+    <div class="view-header">
+      {{ header }}
+    </div>
+  {% endif %}
+  {% if exposed %}
+    <div class="view-filters">
+      {{ exposed }}
+    </div>
+  {% endif %}
+  {% if attachment_before %}
+    <div class="attachment attachment-before">
+      {{ attachment_before }}
+    </div>
+  {% endif %}
+
+  {% if rows %}
+    <div class="view-content row">
+      {{ rows }}
+    </div>
+  {% elseif empty %}
+    <div class="view-empty">
+      {{ empty }}
+    </div>
+  {% endif %}
+
+  {% if pager %}
+    {{ pager }}
+  {% endif %}
+  {% if attachment_after %}
+    <div class="attachment attachment-after">
+      {{ attachment_after }}
+    </div>
+  {% endif %}
+  {% if more %}
+    {{ more }}
+  {% endif %}
+  {% if footer %}
+    <div class="view-footer">
+      {{ footer }}
+    </div>
+  {% endif %}
+  {% if feed_icons %}
+    <div class="feed-icons">
+      {{ feed_icons }}
+    </div>
+  {% endif %}
+</div>
+#}
+
+<div {{ attributes.addClass(classes) }}>
+{% if exposed %}
+    <div class="view-filters losfiltros d-none">
+      {{ exposed }}
+    </div>
+  {% endif %}
+	<div class="row">
+		<div class="col-xl-3 col-lg-4 col-md-5">
+			<div class="sidebar-categories">
+				<div class="head">Categorías</div>
+				<ul class="main-categories filtro-de-categoria">
+        {% for item in exposed.field_categoria_target_id["#options"] %}
+          <li class="main-nav-list">
+						<a href="" aria-expanded="false">{{item}}</a>
+					</li>
+        {% endfor %}
+				</ul>
+			</div>
+		</div>
+		<div
+			class="col-xl-9 col-lg-8 col-md-7">
+			<!-- Start Filter Bar -->
+			{# <div class="filter-bar d-flex flex-wrap align-items-center">
+        
+      </div> #}
+			<!-- End Filter Bar -->
+			<!-- Start Best Seller -->
+			<section class="lattest-product-area pb-40 category-list">
+				<div
+					class="row">
+					<!-- single product -->
+          {% if rows %}
+					  {{rows}}
+          {% elseif empty %}
+            {{empty}}
+          {% endif %}
+
+				</div>
+			</section>
+
+			<!-- End Best Seller -->
+			<!-- Start Filter Bar -->
+			  {# <div class="filter-bar d-flex flex-wrap align-items-center"></div> #}
+			<!-- End Filter Bar -->
+		</div>
+	</div>
+</div></div></div>
+

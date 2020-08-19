@@ -1,0 +1,59 @@
+global-styling:
+  version: VERSION
+  js:
+    jquery-1.12.4.min.js: {}
+    jquery-2.2.4.min.js: {}
+    https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js: {type: external }
+    js/jquery.ajaxchimp.min.js: {}
+    js/jquery.nice-select.min.js: {}
+    js/jquery.sticky.js: {}
+    js/nouislider.min.js: {}
+    js/countdown.js: {}
+    js/jquery.magnific-popup.min.js: {}
+    js/owl.carousel.min.js: {}
+    js/ion.rangeSlider.js: {}
+    js/parallax.min.js: {}
+    https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE: {type : external}
+    js/gmaps.min.js: {}
+    js/jquery.instagramFeed.min.js: {}
+    js/global.js: {}
+    js/main.js: {}
+  css:
+    component:
+      css/linearicons.css: {} 
+      css/font-awesome.min.css: {} 
+      css/themify-icons.css: {} 
+      css/owl.carousel.css: {} 
+      css/nice-select.css: {} 
+      css/nouislider.min.css: {} 
+      css/ion.rangeSlider.css: {} 
+      css/ion.rangeSlider.skinFlat.css: {} 
+      css/magnific-popup.css: {} 
+      css/availability-calendar.css: {} 
+      css/jquerysctipttop.css: {} 
+      css/main.css: {} 
+      css/style.css: {}
+      css/colors.css: {}
+bootstrap:
+  js:
+    /libraries/popper.js/dist/umd/popper.min.js: {}
+    /libraries/bootstrap/dist/js/bootstrap.min.js: {}
+  css:
+    component:
+      /libraries/bootstrap/dist/css/bootstrap.min.css: {}
+bootstrap_cdn:
+  js:
+    //cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js: {}
+    //stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js: {}
+  css:
+    component:
+      //stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css: {}
+color.preview:
+  version: VERSION
+  css:
+    theme:
+      color/preview.css: {}
+  js:
+    color/preview.js: {}
+  dependencies:
+    - color/drupal.color

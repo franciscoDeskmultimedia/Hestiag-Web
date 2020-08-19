@@ -1,0 +1,139 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main content
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+  ]
+%}
+{# <div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    <div{{ content_attributes.addClass('content') }}>
+      {{ content }}
+    </div>
+  {% endblock %}
+</div> #}
+
+<footer class="footer-area section_gap">
+      <div class="container">
+        <div class="row">
+          {# <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="single-footer-widget">
+              <h6>
+                Acerca de Nosotros
+              </h6>
+              <p>
+                {{content.field_acerca_de_nosotros}}
+              </p>
+            </div>
+          </div> #}
+          <div class="col-lg-7 col-md-6 col-sm-6">
+            <div class="single-footer-widget">
+              <h6>
+                Contáctanos
+              </h6>
+              <p><span><i class="fas fa-map-marker-alt"></i></span> {{content.field_direccion_1 |render|striptags|trim }}</p>
+              <p><span><i class="fas fa-map-marker-alt"></i></span> {{content.field_direccion_2 |render|striptags|trim }}</p>
+              <p><span><i class="fas fa-phone-alt"></i></span> <a href="https://wa.me/593967486700">{{content.field_telefono |render|striptags|trim}}</a></p>
+              <p><span><i class="fas fa-envelope-open"></i></span> <a href="mailto:{{content.field_correo |render|striptags|trim}}">{{content.field_correo |render|striptags|trim}}</a></p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="single-footer-widget mail-chimp">
+              <h6 class="mb-20">
+                Instragram Feed
+              </h6>
+              {# <ul class="instafeed d-flex flex-wrap">
+                <li><img src="/themes/custom/hestiag/img/i1.jpg" alt="" /></li>
+                <li><img src="/themes/custom/hestiag/img/i2.jpg" alt="" /></li>
+                <li><img src="/themes/custom/hestiag/img/i3.jpg" alt="" /></li>
+                <li><img src="/themes/custom/hestiag/img/i4.jpg" alt="" /></li>
+                <li><img src="/themes/custom/hestiag/img/i5.jpg" alt="" /></li>
+                <li><img src="/themes/custom/hestiag/img/i6.jpg" alt="" /></li>
+                <li><img src="/themes/custom/hestiag/img/i7.jpg" alt="" /></li>
+                <li><img src="/themes/custom/hestiag/img/i8.jpg" alt="" /></li>
+              </ul> #}
+              {# <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+              <div class="elfsight-app-9578bc54-22b9-4b82-913d-1bc57bf9c8ef"></div> #}
+              {# <div id="theInstagramFeed"></div> #}
+              <!-- LightWidget WIDGET -->
+              <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/f0396ee5887d5349bf1ba60afd864920.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+              <!-- SnapWidget -->
+{# <script src="https://snapwidget.com/js/snapwidget.js"></script>
+<iframe src="https://snapwidget.com/embed/861916" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width:100%; "></iframe> #}
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6 col-sm-6">
+            <div class="single-footer-widget">
+              <h6>
+                Síguenos en
+              </h6>
+              <p>
+                Entérate más en :
+              </p>
+              <div class="footer-social d-flex align-items-center">
+                {% if content.field_facebook |render|striptags|trim %}
+                  <a href="{{content.field_facebook |render|striptags|trim}}"><i class="fa fa-facebook"></i></a>
+                {% endif %}
+                {% if content.field_instagram |render|striptags|trim %}
+                  <a href="{{content.field_instagram |render|striptags|trim}}"><i class="fa fa-instagram"></i></a>
+                {% endif %}
+                {% if content.field_linkedin |render|striptags|trim %}
+                  <a href="{{content.field_linkedin |render|striptags|trim}}"><i class="fa fa-linkedin"></i></a>
+                {% endif %}
+                {% if content.field_youtube |render|striptags|trim %}
+                  <a href="{{content.field_youtube |render|striptags|trim}}"><i class="fa fa-youtube"></i></a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+        {# <div class="footer-bottom d-flex justify-content-center align-items-center flex-wrap">
+          <p class="footer-text m-0">
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>
+              document.write(new Date().getFullYear());
+            </script>All rights reserved | This template is made with <i class="fa fa-heart-o"
+              aria-hidden="true">
+
+            </i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </p>
+        </div> #}
+      </div>
+    </footer>

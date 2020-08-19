@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * Theme override to display a single views grouping.
+ *
+ * Available variables:
+ * - view: The view object.
+ * - grouping: The grouping instruction.
+ * - grouping_level: A number indicating the hierarchical level of the grouping.
+ * - title: The group heading.
+ * - content: The content to be grouped.
+ * - rows: The rows returned from the view.
+ *
+ * @see template_preprocess_views_view_grouping()
+ */
+#}
+{# <div class="view-grouping">
+  <div class="view-grouping-header">{{ title }}</div>
+  <div class="view-grouping-content">{{ content }}</div>
+</div> #}
+<div class="single-product-slider">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-6 text-center">
+				<div class="section-title">
+					<h1>
+						{{ title }}
+					</h1>
+					<p>{{ content[0]['#title']}}</p>
+				</div>
+			</div>
+		</div>
+		<div class="row justify-content-center">{{ content }}</div>
+	</div>
+</div>
+
