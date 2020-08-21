@@ -801,4 +801,8 @@ $databases['default']['default'] = array (
   'port' => '3306',
   'driver' => 'mysql',
 );
-# $settings['config_sync_directory'] = 'sites/default/files/config_C3l75_uNAImbLhN1U0RQ1W9sEotspXsZ-y-2lpSQIcEV2CeIQO0YQeGua0CFcMru4HhevJv7_w/sync';
+$settings['config_sync_directory'] = 'sites/default/files/config_C3l75_uNAImbLhN1U0RQ1W9sEotspXsZ-y-2lpSQIcEV2CeIQO0YQeGua0CFcMru4HhevJv7_w/sync';
+
+if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+     include $app_root . '/' . $site_path . '/settings.local.php';
+}
