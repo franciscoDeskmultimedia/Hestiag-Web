@@ -1,8 +1,6 @@
 global-styling:
   version: VERSION
   js:
-    jquery-1.12.4.min.js: {}
-    jquery-2.2.4.min.js: {}
     https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js: {type: external }
     js/jquery.ajaxchimp.min.js: {}
     js/jquery.nice-select.min.js: {}

@@ -66,7 +66,8 @@ $(document).ready(function(){
 		============================*/
       $(".sticky-header").sticky({
         getWidthFrom : '#page',
-        responsiveWidth:true
+        responsiveWidth:true,
+        topSpacing:0
       });
 
     /*=================================
