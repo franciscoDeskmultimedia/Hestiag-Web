@@ -234,11 +234,8 @@ function _commerce_cart_advanced_order_type_form_submit(
   $order_type = $form_state->getFormObject()->getEntity();
 
   // Install the field for marking orders as non-current carts.
-  $fields = \Drupal::service('entity_field.manager')->getFieldDefinitions('commerce_order', $order_type->id());
-  if (empty(isset($fields[COMMERCE_CART_ADVANCED_NON_CURRENT_FIELD_NAME]))) {
-    \Drupal::service('commerce_cart_advanced.order_service')
-      ->installNonCurrentField($order_type);
-  }
+  \Drupal::service('commerce_cart_advanced.order_service')
+    ->installNonCurrentField($order_type);
 
   // Save our third party settings for the order type.
   $settings = $form_state->getValue(['commerce_cart']);
