@@ -55,7 +55,7 @@
                 </td>
                 <td>
                   <span>{{ order_item.label }}</span>
-                  <span style="float: right;">{{ order_item.getTotalPrice|commerce_price_format }}</span>
+                  {# <span style="float: right;">{{ order_item.getTotalPrice|commerce_price_format }}</span> #}
                 </td>
               </tr>
               {% endfor %}
@@ -71,10 +71,10 @@
               <tbody>
               <tr>
                 {% if shipping_information %}
-                  <td style="padding-top: 5px; font-weight: bold;">{{ 'Shipping Information'|t }}</td>
+                  <td style="padding-top: 5px; font-weight: bold;">{{ 'Dirección de entrega'|t }}</td>
                 {% endif %}
                 {% if billing_information %}
-                  <td style="padding-top: 5px; font-weight: bold;">{{ 'Billing Information'|t }}</td>
+                  <td style="padding-top: 5px; font-weight: bold;">{{ 'Informacion para facturación'|t }}</td>
                 {% endif %}
               </tr>
               <tr>
@@ -95,7 +95,7 @@
               </tr>
               {% if payment_method %}
                 <tr>
-                  <td style="font-weight: bold; margin-top: 10px;">{{ 'Payment Method'|t }}</td>
+                  <td style="font-weight: bold; margin-top: 10px;">{{ 'Metodo de pago'|t }}</td>
                 </tr>
                 <tr>
                   <td>
@@ -110,33 +110,33 @@
             {% endif %}
           </td>
         </tr>
-        <tr>
+        {# <tr>
           <td>
             <p style="margin-bottom: 0;">
               {{ 'Subtotal: @subtotal'|t({'@subtotal': totals.subtotal|commerce_price_format}) }}
             </p>
           </td>
-        </tr>
+        </tr> #}
         {% for adjustment in totals.adjustments %}
-        <tr>
+        {# <tr>
           <td>
             <p style="margin-bottom: 0;">
               {{ adjustment.label }}: {{ adjustment.total|commerce_price_format }}
             </p>
           </td>
-        </tr>
+        </tr> #}
         {% endfor %}
-        <tr>
+        {# <tr>
           <td>
             <p style="font-size: 24px; padding-top: 15px; padding-bottom: 5px;">
               {{ 'Order Total: @total'|t({'@total': order_entity.getTotalPrice|commerce_price_format}) }}
             </p>
           </td>
-        </tr>
+        </tr> #}
         <tr>
           <td>
             {% block additional_information %}
-              {{ 'Thank you for your order!'|t }}
+              {{ 'Gracias por tu pedido!'|t }}
             {% endblock %}
           </td>
         </tr>
