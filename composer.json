@@ -34,6 +34,7 @@
         "drupal/core-project-message": "^8.8",
         "drupal/core-recommended": "^8.8",
         "drupal/core-vendor-hardening": "^8.8",
+        "drupal/d8_recaptcha_v3": "^2.0",
         "drupal/draggableviews": "^2.0",
         "drupal/entity_usage": "^2.0@beta",
         "drupal/fontawesome": "^2.15",

@@ -1,0 +1,7 @@
+recaptcha_v3:
+  js:
+    js/recaptcha.js: {attributes: {defer: 'true', async: 'true'}}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings    

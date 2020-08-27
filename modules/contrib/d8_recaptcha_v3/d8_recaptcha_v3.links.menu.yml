@@ -1,0 +1,6 @@
+d8_recaptcha_v3.admin_settings_form:  
+  title: 'Recaptcha v3 settings'  
+  route_name: d8_recaptcha_v3.admin_settings_form  
+  description: 'reCaptcha v3 settings'  
+  parent: system.admin_config_system  
+  weight: 99 

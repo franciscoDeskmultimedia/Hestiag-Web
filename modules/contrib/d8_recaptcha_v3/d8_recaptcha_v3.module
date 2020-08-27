@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * @file
+ * Contains d8_recaptcha_v3.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Site\Settings;
+
+/**
+ * Implements hook_help().
+ */
+function d8_recaptcha_v3_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the d8_recaptcha_v3 module.
+    case 'help.page.d8_recaptcha_v3':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('reCaptcha v3 integration') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+function d8_recaptcha_v3_page_attachments(array &$page) {
+  if (Settings::get('disable_captcha', FALSE) !== TRUE) {
+    $config = \Drupal::config('d8_recaptcha_v3.settings');
+    $page['#attached']['drupalSettings']['d8_recaptcha_v3'] = [
+      'site_key' => $config->get('site_key'),
+      'captcha_selectors' => $config->get('captcha_selectors'),
+      'badge_position' => $config->get('badge_position')
+    ];
+    $page['#attached']['library'][] = 'd8_recaptcha_v3/recaptcha_v3';
+  }
+}

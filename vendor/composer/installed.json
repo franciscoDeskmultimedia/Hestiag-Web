@@ -2406,6 +2406,63 @@
         }
     },
     {
+        "name": "drupal/d8_recaptcha_v3",
+        "version": "2.0.0",
+        "version_normalized": "2.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupalcode.org/project/d8_recaptcha_v3.git",
+            "reference": "8.x-2.0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/d8_recaptcha_v3-8.x-2.0.zip",
+            "reference": "8.x-2.0",
+            "shasum": "e05122493d61e73f2a118cf45a1387ca0a1d517d"
+        },
+        "require": {
+            "drupal/core": "~8.0"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "drupal": {
+                "version": "8.x-2.0",
+                "datestamp": "1582109080",
+                "security-coverage": {
+                    "status": "covered",
+                    "message": "Covered by Drupal's security advisory policy"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packages.drupal.org/8/downloads",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "authors": [
+            {
+                "name": "IlyaG (skeeve)",
+                "homepage": "https://www.drupal.org/u/skeeve",
+                "role": "Maintainer"
+            },
+            {
+                "name": "Mohamed Anis Taktak (matio89)",
+                "homepage": "https://www.drupal.org/u/matio89",
+                "role": "Maintainer"
+            }
+        ],
+        "description": "Provides a reCaptcha v3 integration.",
+        "homepage": "http://drupal.org/project/d8_recaptcha_v3",
+        "keywords": [
+            "Drupal",
+            "reCAPTCHA"
+        ],
+        "support": {
+            "source": "http://cgit.drupalcode.org/d8_recaptcha_v3",
+            "issues": "https://www.drupal.org/project/issues/d8_recaptcha_v3"
+        }
+    },
+    {
         "name": "drupal/draggableviews",
         "version": "2.0.0",
         "version_normalized": "2.0.0.0",

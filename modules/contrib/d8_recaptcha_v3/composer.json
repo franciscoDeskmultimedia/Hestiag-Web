@@ -1,0 +1,24 @@
+{
+  "name": "drupal/d8_recaptcha_v3",
+  "description": "Provides a reCaptcha v3 integration.",
+  "type": "drupal-module",
+  "keywords": ["Drupal", "reCAPTCHA"],
+  "homepage": "http://drupal.org/project/d8_recaptcha_v3",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "IlyaG (skeeve)",
+      "homepage": "https://www.drupal.org/u/skeeve",
+      "role": "Maintainer"
+    },
+    {
+      "name": "Mohamed Anis Taktak (matio89)",
+      "homepage": "https://www.drupal.org/u/matio89",
+      "role": "Maintainer"
+    }
+  ],
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/d8_recaptcha_v3",
+    "source": "http://cgit.drupalcode.org/d8_recaptcha_v3"
+  }
+}
